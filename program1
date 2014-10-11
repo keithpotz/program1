@@ -1,0 +1,34 @@
+/*Keith Pottratz
+ August 31, 2014
+This porgram takes the id number of the runner 
+and converts it into time by hours, mins, and secs. */
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <string>
+using namespace std;
+void main()
+{
+	int i, idnumber, time,hours,mins,secs;
+
+	ifstream inf;
+	ofstream outf;
+	inf.open("program1.dat");
+	outf.open("program1.out");
+	for (i = 1; i <= 8; i++)
+	{
+		
+
+		inf >> idnumber >> time;
+		outf << idnumber << " with time = " << time << " secs or ";
+		hours = time / 3600;
+		time = time % 3600;
+		mins = time / 60;
+		time = time % 60;
+		secs = time;
+
+		outf << hours << " : " << mins << " : " << secs << endl;
+		
+	}
+	system("pause");
+}
